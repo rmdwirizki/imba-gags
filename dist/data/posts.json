@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Eh, emang dibayar ya? xD",
+    "src": "https://develoka.com/uploads/images/42f85278edb1e92a94acd5e4fb307ef5.png",
+    "author": "rmdwirizki",
+    "email": "rmdwirizki@gmail.com",
+    "comments": [
+      { 
+        "author": "mizwardomlank", 
+        "email": "mizwardomlank@gmail.com", 
+        "content": "Hahaha" 
+      }
+    ],
+    "fun": 0
+  },
+  {
+    "title": "Abis baca artikel: Menguasai VIM dalam 10 menit",
+    "src": "https://develoka.com/uploads/images/970cb75e1682b72e82ce896e4de1849e.jpg",
+    "author": "mizwardomlank",
+    "email": "mizwardomlank@gmail.com",
+    "comments": [
+      { 
+        "author": "rmdwirizki", 
+        "email": "rmdwirizki@gmail.com", 
+        "content": "Lol watir ih" 
+      }
+    ],
+    "fun": 10
+  },
+  {
+    "title": "Waktu nerima laporan bug",
+    "src": "https://develoka.com/uploads/images/968fe98050355d60ad294a657d55adab.jpg",
+    "author": "rmdwirizki",
+    "email": "rmdwirizki@gmail.com",
+    "comments": [],
+    "fun": 4
+  }
+]
