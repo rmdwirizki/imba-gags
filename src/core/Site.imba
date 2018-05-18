@@ -1,23 +1,33 @@
-import '../styles/appStyles.scss';
+# Styles
+import '../styles/appStyles.scss'
 
-import 'imba-router';
-
-let store = {
+# Store and Local Data
+let state = {
   session: {
-    username: 'rmdwirizki',
-    email: 'rmdwirizki@gmail.com'
+    loggedIn: false,
+    user : {}
   },
-  posts: [],
+  posts: []
 }
+
+# Listen auth changed
+import {setAuthListener} from './Auth.imba'
+setAuthListener state:session
+
+# Router
+import 'imba-router'
 
 import {Navbar} from '../components/Navbar.imba'
 
 import {Home} from '../pages/Home.imba'
 import {Form} from '../pages/Form.imba'
+import {Detail} from '../pages/Detail.imba'
 
 export tag Site
   def render
     <self>
-      <Navbar>
-      <Home[store] route='/'>
-      <Form[store] route='/form'>
+      <Navbar[state]>
+      <Home[state] route='/'>
+      <Form[state] route='/create'>
+      <Form[state] route='/edit/:slug'>
+      <Detail[state] route='/detail/:slug'>
