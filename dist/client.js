@@ -20300,10 +20300,10 @@ if(false) {
 
 exports = module.exports = __webpack_require__(96)(false);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Rubik);", ""]);
 
 // module
-exports.push([module.i, "body {\n  margin: 0;\n  overflow-x: hidden; }\n", ""]);
+exports.push([module.i, ".Navbar {\n  background: #524948;\n  height: 70px;\n  display: flex;\n  justify-content: space-between;\n  padding: 0 30px; }\n  .Navbar > * {\n    height: 100%;\n    display: flex;\n    align-items: center; }\n  .Navbar a {\n    font-size: 1.25rem;\n    text-decoration: none;\n    color: #C7CEDB;\n    opacity: .75; }\n    .Navbar a:hover {\n      opacity: 1; }\n  .Navbar .logo a {\n    font-size: 1.5rem; }\n  .Navbar .action .user {\n    cursor: pointer;\n    display: flex;\n    align-items: center;\n    height: 100%;\n    margin-left: 30px; }\n    .Navbar .action .user:hover .dropdown {\n      display: block; }\n    .Navbar .action .user .avatar {\n      display: flex;\n      align-items: center; }\n      .Navbar .action .user .avatar img {\n        width: 30px;\n        height: 30px;\n        border-radius: 50%; }\n    .Navbar .action .user .dropdown {\n      display: none;\n      position: absolute;\n      top: 70px;\n      right: 0;\n      width: 150px;\n      padding: 10px 30px;\n      background: #524948d9;\n      text-align: right;\n      border-bottom-left-radius: 5px; }\n\n.Home {\n  display: flex;\n  justify-content: center;\n  padding: 30px 0; }\n  .Home .posts-list {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n    .Home .posts-list .post-card {\n      margin-top: 30px; }\n      .Home .posts-list .post-card:not(:first-child) {\n        padding-top: 30px;\n        border-top: 1px solid rgba(0, 0, 0, 0.1); }\n      .Home .posts-list .post-card .title {\n        margin-bottom: 20px;\n        font-size: 20px;\n        font-weight: 700;\n        color: #524948;\n        cursor: pointer; }\n        .Home .posts-list .post-card .title:hover {\n          color: #09f; }\n      .Home .posts-list .post-card .image {\n        width: 500px;\n        overflow: hidden;\n        cursor: pointer; }\n        .Home .posts-list .post-card .image img {\n          min-width: 400px;\n          max-width: 500px; }\n      .Home .posts-list .post-card .label {\n        color: #A0AAB2;\n        margin-top: 20px;\n        font-size: .95em; }\n        .Home .posts-list .post-card .label span {\n          margin-right: 10px;\n          cursor: pointer; }\n          .Home .posts-list .post-card .label span:hover {\n            color: #7a8186; }\n\n.Detail {\n  display: flex;\n  justify-content: center;\n  padding: 30px 0; }\n  .Detail .post-card {\n    margin-top: 30px;\n    padding-bottom: 30px;\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n    animation-duration: .5s;\n    animation-name: fade; }\n    .Detail .post-card .title {\n      margin-bottom: 20px;\n      font-size: 20px;\n      font-weight: 700;\n      color: #524948; }\n    .Detail .post-card .image {\n      width: 500px;\n      overflow: hidden; }\n      .Detail .post-card .image img {\n        min-width: 400px;\n        max-width: 500px; }\n    .Detail .post-card .label {\n      color: #A0AAB2;\n      margin-top: 20px;\n      font-size: .95em; }\n      .Detail .post-card .label span {\n        margin-right: 10px;\n        cursor: pointer; }\n        .Detail .post-card .label span:hover {\n          color: #7a8186; }\n    .Detail .post-card .action {\n      text-align: right; }\n      .Detail .post-card .action button {\n        color: #fff;\n        font-family: 'Rubik';\n        padding: 5px 10px;\n        outline: none;\n        border: 0;\n        border-radius: 3px;\n        margin-top: 20px;\n        cursor: pointer; }\n        .Detail .post-card .action button.edit {\n          margin-right: 5px;\n          background: #d28d1c; }\n          .Detail .post-card .action button.edit:hover {\n            background: #bc7e19; }\n        .Detail .post-card .action button.remove {\n          background: #ce3d3d; }\n          .Detail .post-card .action button.remove:hover {\n            background: #c13131; }\n  .Detail .comment-box {\n    padding-top: 30px; }\n    .Detail .comment-box .alert {\n      padding-bottom: 40px;\n      text-align: center; }\n      .Detail .comment-box .alert a {\n        text-decoration: none;\n        color: #3a8ec5; }\n        .Detail .comment-box .alert a:hover {\n          color: #3480b1; }\n    .Detail .comment-box form {\n      display: flex; }\n      .Detail .comment-box form .avatar {\n        width: 50px;\n        height: 50px; }\n        .Detail .comment-box form .avatar img {\n          width: 100%;\n          height: 100%; }\n      .Detail .comment-box form .input {\n        flex-grow: 1;\n        padding-left: 10px; }\n        .Detail .comment-box form .input textarea {\n          width: 100%;\n          height: 40px;\n          outline: none;\n          resize: none;\n          border-radius: 1px;\n          border: 1px solid rgba(1, 1, 1, 0.2);\n          padding: 5px; }\n        .Detail .comment-box form .input button {\n          float: right;\n          background: #3a8ec5;\n          color: #fff;\n          font-family: 'Rubik';\n          padding: 5px 10px;\n          outline: none;\n          border: 0;\n          border-radius: 3px;\n          margin-top: 10px; }\n          .Detail .comment-box form .input button:hover {\n            background: #3480b1; }\n    .Detail .comment-box .comment-card:not(:last-child) {\n      margin-bottom: 20px; }\n    .Detail .comment-box .comment-card .detail {\n      display: flex; }\n      .Detail .comment-box .comment-card .detail .avatar {\n        width: 40px;\n        height: 40px; }\n        .Detail .comment-box .comment-card .detail .avatar img {\n          width: 100%;\n          height: 100%; }\n      .Detail .comment-box .comment-card .detail .content {\n        padding-left: 10px;\n        flex-grow: 1;\n        font-size: .9em; }\n    .Detail .comment-box .comment-card .action {\n      margin-top: 10px; }\n      .Detail .comment-box .comment-card .action button {\n        color: #fff;\n        font-family: 'Rubik';\n        padding: 5px 10px;\n        outline: none;\n        border: 0;\n        border-radius: 3px;\n        cursor: pointer; }\n        .Detail .comment-box .comment-card .action button.edit {\n          margin-right: 5px;\n          background: #d28d1c; }\n          .Detail .comment-box .comment-card .action button.edit:hover {\n            background: #bc7e19; }\n        .Detail .comment-box .comment-card .action button.remove {\n          background: #ce3d3d; }\n          .Detail .comment-box .comment-card .action button.remove:hover {\n            background: #c13131; }\n\n@keyframes fade {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.Form {\n  display: flex;\n  justify-content: center;\n  padding: 50px 0; }\n  .Form form {\n    display: flex;\n    flex-direction: column; }\n    .Form form > * {\n      margin-bottom: 10px;\n      font-size: 1rem;\n      padding: 10px; }\n    .Form form input {\n      border: 1px solid rgba(1, 1, 1, 0.2);\n      border-radius: 2px;\n      outline: none; }\n      .Form form input::placeholder {\n        color: rgba(1, 1, 1, 0.3); }\n      .Form form input:focus {\n        border-color: rgba(1, 1, 1, 0.5); }\n    .Form form .preview {\n      max-width: 400px; }\n      .Form form .preview img {\n        width: 100%; }\n    .Form form button {\n      background: #3a8ec5;\n      color: #fff;\n      font-family: 'Rubik';\n      outline: none;\n      border: 0;\n      border-radius: 3px; }\n      .Form form button:hover {\n        background: #3480b1; }\n      .Form form button.update {\n        background: #d28d1c; }\n        .Form form button.update:hover {\n          background: #bc7e19; }\n\nbody {\n  font-family: \"Rubik\", \"cursive\";\n  margin: 0;\n  overflow-x: hidden; }\n", ""]);
 
 // exports
 
@@ -62356,10 +62356,6 @@ var Navbar = Imba.defineTag('Navbar', function(tag){
 		});
 	};
 	
-	tag.prototype.signIn = function (){
-		return login;
-	};
-	
 	tag.prototype.signInRedirect = function (){
 		var self = this;
 		return login({
@@ -62371,16 +62367,44 @@ var Navbar = Imba.defineTag('Navbar', function(tag){
 	
 	tag.prototype.render = function (){
 		var $ = this.$;
-		return this.$open(0).setChildren([
-			($[0] || _1('a',$,0,this).setRouteTo('/').setText('Home')).end(),
-			this.data().session.loggedIn ? Imba.static([
-				($[1] || _1('a',$,1,this).setRouteTo('/create').setText('Add Post')).end(),
-				($[2] || _1('a',$,2,this).setHref('#').on$(0,['click','prevent','signOut'],this).setText('Logout')).end()
-			],2,1) : Imba.static([
-				($[3] || _1('a',$,3,this).setHref('#').on$(0,['click','prevent','signInRedirect'],this).setText('Add Post')).end(),
-				($[4] || _1('a',$,4,this).setHref('#').on$(0,['click','prevent','signIn'],this).setText('Login')).end()
-			],2,2)
-		],1).synced();
+		return this.$open(0).setChildren($.$ = $.$ || [
+			_1('div',$,0,this).flag('promote').setContent(
+				$[1] || _1('a',$,1,0).setHref('https://github.com/rmdwirizki/imba-gags').setTarget('_blank').setText('Source on Github')
+			,2),
+			_1('div',$,2,this).flag('logo').setContent(
+				$[3] || _1('a',$,3,2).setRouteTo('/').setText('Imba Gags')
+			,2),
+			_1('div',$,4,this).flag('action')
+		],2).synced((
+			$[1].end(),
+			$[3].end(),
+			$[4].setContent(
+				this.data().session.loggedIn ? Imba.static([
+					($[5] || _1('div',$,5,4).flag('create').setContent(
+						$[6] || _1('a',$,6,5).setRouteTo('/create').setText('Add Post')
+					,2)).end((
+						$[6].end()
+					,true)),
+					($[7] || _1('div',$,7,4).flag('user').setContent([
+						_1('div',$,8,7).flag('avatar').setContent(
+							$[9] || _1('img',$,9,8)
+						,2),
+						_1('div',$,10,7).flag('dropdown').setContent(
+							$[11] || _1('a',$,11,10).setHref('#').on$(0,['click','prevent','signOut'],this).setText('Logout')
+						,2)
+					],2)).end((
+						$[9].setSrc(this.data().session.user.photoUrl).end(),
+						$[11].end()
+					,true))
+				],2,1) : (
+					($[12] || _1('div',$,12,4).flag('create').setContent(
+						$[13] || _1('a',$,13,12).setHref('#').on$(0,['click','prevent','signInRedirect'],this).setText('Add Post')
+					,2)).end((
+						$[13].end()
+					,true))
+				)
+			,3)
+		,true));
 	};
 })
 exports.Navbar = Navbar;
@@ -62395,6 +62419,27 @@ var Imba = __webpack_require__(10), _2 = Imba.createTagList, _1 = Imba.createEle
 var db = __webpack_require__(22).db;
 
 var Home = Imba.defineTag('Home', function(tag){
+	tag.prototype.onscroll = function(v){ return this._onscroll; }
+	tag.prototype.setOnscroll = function(v){ this._onscroll = v; return this; };
+	tag.prototype.__lastScroll = {'default': 0,name: 'lastScroll'};
+	tag.prototype.lastScroll = function(v){ return this._lastScroll; }
+	tag.prototype.setLastScroll = function(v){ this._lastScroll = v; return this; }
+	tag.prototype._lastScroll = 0;
+	
+	tag.prototype.load = function (){
+		var self = this;
+		return self._onscroll = function() { return self._lastScroll = window.scrollY; };
+	};
+	
+	tag.prototype.mount = function (){
+		window.addEventListener('scroll',this._onscroll);
+		return window.scroll(0,this._lastScroll);
+	};
+	
+	tag.prototype.unmount = function (){
+		return window.removeEventListener('scroll',this._onscroll);
+	};
+	
 	tag.prototype.setup = function (){
 		var self = this;
 		const postsRef = db().ref('posts');
@@ -62447,15 +62492,16 @@ var Home = Imba.defineTag('Home', function(tag){
 									_1('div',t0.$,'B',t0).flag('image').setContent(
 										t0.$.C || _1('img',t0.$,'C','B')
 									,2),
-									_1('div',t0.$,'D',t0).flag('label').setContent([
-										_1('span',t0.$,'E','D'),
-										_1('span',t0.$,'F','D')
-									],2)
-								],2)).setRouteTo(('/detail/' + post.slug)).end((
-									t0.$.A.setContent(post.title,3),
-									t0.$.C.setSrc(post.src).end(),
-									t0.$.E.setText("" + (post.counter.funs) + " Fun"),
-									t0.$.F.setText("" + (post.counter.comments) + " Comments")
+									_1('div',t0.$,'D',t0).flag('label').setContent(
+										// <span> "{post:counter:funs} Fun"
+										t0.$.E || _1('span',t0.$,'E','D')
+									,2)
+								],2)).end((
+									t0.$.A.setRouteTo(('/detail/' + post.slug)).setContent(post.title,3).end(),
+									t0.$.B.setRouteTo(('/detail/' + post.slug)).end((
+										t0.$.C.setSrc(post.src).end()
+									,true)),
+									t0.$.E.setRouteTo(('/detail/' + post.slug)).setText("" + (post.counter.comments) + " Comments").end()
 								,true));
 							};return $0;
 						})($[3] || _2($,3,$[2]))
@@ -62638,16 +62684,22 @@ var Form = Imba.defineTag('Form', function(tag){
 					($[2] || _1('form',$,2,0).on$(0,['submit','prevent','submit'],this).setContent([
 						_1('input',$,3,2).setType("text").setPlaceholder("Title").setRequired('required'),
 						_1('input',$,4,2).on$(0,['keydown','validateImage'],this).on$(1,['paste','validateImage'],this).setType("url").setPlaceholder("Insert the URL").setRequired('required'),
-						_1('div',$,5,2).flag('preview').setContent([
-							_1('span',$,6,5).setText("Preview"),
-							_1('img',$,7,5)
-						],2),
-						_1('button',$,8,2).setType("submit").setText("Submit")
+						_1('div',$,5,2).flag('preview').setContent(
+							// <span> "Preview"
+							$[6] || _1('img',$,6,5)
+						,2),
+						_1('button',$,7,2).setType("submit")
 					],2)).end((
 						$[3].bindData(this,'title',[]).end(),
 						$[4].bindData(this,'url',[]).end(),
-						$[7].setSrc(this.imgSrc()).end(),
-						$[8].end()
+						$[6].setSrc(this.imgSrc()).end(),
+						$[7].flagIf('update',this.isEdit()).setContent(
+							this.isEdit() ? (
+								"Update"
+							) : (
+								"Submit"
+							)
+						,3).end()
 					,true))
 				)
 			,3)
@@ -72647,6 +72699,7 @@ if ('Set' in global) {
 function iter$(a){ return a ? (a.toArray ? a.toArray() : a) : []; };
 var Imba = __webpack_require__(10), _2 = Imba.createTagList, _1 = Imba.createElement;
 var db = __webpack_require__(22).db;
+var login = __webpack_require__(44).login;
 
 var Detail = Imba.defineTag('Detail', function(tag){
 	tag.prototype.post = function(v){ return this._post; }
@@ -72658,6 +72711,11 @@ var Detail = Imba.defineTag('Detail', function(tag){
 	
 	tag.prototype.content = function(v){ return this._content; }
 	tag.prototype.setContent = function(v){ this._content = v; return this; };
+	
+	tag.prototype.__postRef = {'default': null,name: 'postRef'};
+	tag.prototype.postRef = function(v){ return this._postRef; }
+	tag.prototype.setPostRef = function(v){ this._postRef = v; return this; }
+	tag.prototype._postRef = null;
 	tag.prototype.__postCommentsRef = {'default': null,name: 'postCommentsRef'};
 	tag.prototype.postCommentsRef = function(v){ return this._postCommentsRef; }
 	tag.prototype.setPostCommentsRef = function(v){ this._postCommentsRef = v; return this; }
@@ -72665,31 +72723,36 @@ var Detail = Imba.defineTag('Detail', function(tag){
 	
 	tag.prototype.mount = function (){
 		this.updateLocalPost();
-		return this.clearContent();
+		this.clearContent();
+		
+		return window.scroll(0,0);
 	};
 	
 	tag.prototype.unmount = function (){
 		if (this._postCommentsRef) {
-			return this._postCommentsRef.off();
+			this._postCommentsRef.off();
+		};
+		if (this._postRef) {
+			return this._postRef.off();
 		};
 	};
 	
 	tag.prototype.clearContent = function (){
-		this._content = '';
-		return Imba.commit();
+		return this._content = '';
 	};
 	
 	tag.prototype.updateLocalPost = function (){
+		// Update local post from store
 		var self = this;
 		if (self.data().posts.length > 0) {
-			// Update from store
 			self._post = self.data().posts.find(function(item) {
 				return item.slug == self.params().slug;
 			});
-			
-			self.setupCommentListener();
-		} else {
-			// Update from firebase
+		};
+		
+		// If store empty
+		// Update local post from firebase
+		if (!self._post) {
 			const ref = db().ref('posts');
 			const query = ref.orderByChild('slug').equalTo(self.params().slug);
 			query.once('value',function(snap) {
@@ -72697,63 +72760,84 @@ var Detail = Imba.defineTag('Detail', function(tag){
 				let res = [];
 				for (let key in dict = snap.val()){
 					let post;
-					post = dict[key];post.key = key;
-					self._post = post;
-					if (!self._postCommentsRef) {
-						self.setupCommentListener();
-					};
+					post = dict[key];self._post = Object.assign(post,{},{'key': key});
+					self.setupListener();
+					
 					res.push(Imba.commit());
 				};
 				return res;
 			});
+		} else {
+			self.setupListener();
 		};
 		
 		return Imba.commit();
 	};
 	
-	tag.prototype.setupCommentListener = function (){
+	tag.prototype.setupListener = function (){
+		// Listen to all comment change on this post
+		
 		var self = this;
 		self._comments = [];
-		
 		self._postCommentsRef = db().ref('postComments/' + self._post.key);
+		
 		self._postCommentsRef.on('child_added',function(snapshot) {
-			const comment = snapshot.val();
-			comment.key = snapshot.key;
+			const comment = Object.assign(snapshot.val(),{},{'key': snapshot.key});
 			self._comments.push(comment);
 			
 			return Imba.commit();
 		});
 		
-		return self._postCommentsRef.on('child_removed',function(snapshot) {
-			const key = snapshot.key;
-			self._comments = self._comments.filter(function(item) {
-				return item.key !== key;
+		self._postCommentsRef.on('child_changed',function(snapshot) {
+			const comment = Object.assign(snapshot.val(),{},{'key': snapshot.key});
+			const index = self._comments.findIndex(function(item) {
+				return snapshot.key == item.key;
 			});
+			self._comments[index] = comment;
+			
+			return Imba.commit();
+		});
+		
+		self._postCommentsRef.on('child_removed',function(snapshot) {
+			self._comments = self._comments.filter(function(item) {
+				return item.key !== snapshot.key;
+			});
+			
+			return Imba.commit();
+		});
+		
+		// Listen to post change
+		
+		self._postRef = db().ref('posts/' + self._post.key);
+		return self._postRef.on('value',function(snapshot) {
+			self._post = Object.assign(snapshot.val(),{},{'key': snapshot.key});
 			
 			return Imba.commit();
 		});
 	};
 	
+	tag.prototype.signIn = function (){
+		return login({
+			success: function() {  } // console.log 'berhasil'
+		});
+	};
+	
 	tag.prototype.addComment = function (){
-		var self = this;
 		const newComment = {
-			user: self.data().session.user,
-			content: self._content,
+			user: this.data().session.user,
+			content: this._content,
 			timestamp: Date.now()
 		};
 		
-		let newCommentRef = self._postCommentsRef.push();
+		let newCommentRef = this._postCommentsRef.push();
 		newCommentRef.set(newComment,function(err) {
 			if (!err) {
+				// Handled on firebase cloud function trigger
 				// Increase comment counter on post
-				const postRef = db().ref('posts/' + self._post.key + '/counter/comments');
-				postRef.set(self._post.counter.comments + 1);
-				// Local change
-				return self.post().counter.comments++;
 			};
 		});
 		
-		return self.clearContent();
+		return this.clearContent();
 	};
 	
 	tag.prototype.editComment = function (key){
@@ -72780,17 +72864,13 @@ var Detail = Imba.defineTag('Detail', function(tag){
 	};
 	
 	tag.prototype.removeComment = function (key){
-		var self = this;
 		let confirm = window.confirm('Are you sure?');
 		if (confirm == true) {
-			let removedCommentRef = self._postCommentsRef.child(key);
+			let removedCommentRef = this._postCommentsRef.child(key);
 			return removedCommentRef.remove(function(err) {
 				if (!err) {
+					// Handled on firebase cloud function trigger
 					// Decrease comment counter on post
-					const postRef = db().ref('posts/' + self._post.key + '/counter/comments');
-					postRef.set(self._post.counter.comments - 1);
-					// Local change
-					return self.post().counter.comments--;
 				};
 			});
 		};
@@ -72803,14 +72883,8 @@ var Detail = Imba.defineTag('Detail', function(tag){
 			let removedPostRef = db().ref('posts/' + self._post.key);
 			return removedPostRef.remove(function(err) {
 				if (!err) {
-					// Remove comment from post in firebase
-					let removedCommentsRef = self._postCommentsRef;
-					removedCommentsRef.remove(function(err) {
-						if (!err) {
-							// console.log 'All related comments has been deleted'
-						};
-					});
-					
+					// Handled on firebase cloud function trigger
+					// Remove all comments from post in firebase
 					return self.router().go('/');
 				};
 			});
@@ -72832,67 +72906,73 @@ var Detail = Imba.defineTag('Detail', function(tag){
 						,2)).end((
 							$[5].setSrc(self.post().src).end()
 						,true)),
-						($[6] || _1('div',$,6,2).flag('label').setContent([
-							_1('span',$,7,6),
-							_1('span',$,8,6)
-						],2)).end((
-							$[7].setText("" + (self.post().counter.funs) + " Fun"),
-							$[8].setText("" + (self.post().counter.comments) + " Comments")
+						($[6] || _1('div',$,6,2).flag('label').setContent(
+							// <span> "{post:counter:funs} Fun"
+							$[7] || _1('span',$,7,6)
+						,2)).end((
+							$[7].setText("" + (self.post().counter.comments) + " Comments")
 						,true)),
 						(self.post().author.email == self.data().session.user.email) ? (
-							($[9] || _1('div',$,9,2).flag('action').setContent([
-								_1('button',$,10,9).setText("Edit"),
-								_1('button',$,11,9).setText("Delete")
+							($[8] || _1('div',$,8,2).flag('action').setContent([
+								_1('button',$,9,8).flag('edit').setText("Edit"),
+								_1('button',$,10,8).flag('remove').setText("Delete")
 							],2)).end((
-								$[10].setRouteTo(('/edit/' + self.post().slug)).end(),
-								$[11].on$(0,['click','prevent',['removePost',self.post().key]],self)
+								$[9].setRouteTo(('/edit/' + self.post().slug)).end(),
+								$[10].on$(0,['click','prevent',['removePost',self.post().key]],self)
 							,true))
 						) : void(0)
 					],1),
 					
-					($[12] || _1('div',$,12,0).flag('comment-box')).setContent([
+					($[11] || _1('div',$,11,0).flag('comment-box')).setContent([
 						self.data().session.loggedIn ? (
-							($[13] || _1('div',$,13,12).flag('input').setContent(
-								$[14] || _1('form',$,14,13).on$(0,['submit','prevent','addComment'],self).setContent([
-									_1('textarea',$,15,14).setRequired('required'),
-									_1('button',$,16,14).setType('submit').setText("Submit")
+							($[12] || _1('form',$,12,11).on$(0,['submit','prevent','addComment'],self).setContent([
+								_1('div',$,13,12).flag('avatar').setContent(
+									$[14] || _1('img',$,14,13)
+								,2),
+								_1('div',$,15,12).flag('input').setContent([
+									_1('textarea',$,16,15).setRequired('required'),
+									_1('button',$,17,15).setType('submit').setText("Submit")
 								],2)
-							,2)).end((
-								$[14].end((
-									$[15].bindData(self,'content',[]).end(),
-									$[16].end()
-								,true))
+							],2)).end((
+								$[14].setSrc(self.data().session.user.photoUrl).end(),
+								$[16].bindData(self,'content',[]).end(),
+								$[17].end()
 							,true))
 						) : (
-							($[17] || _1('div',$,17,12).flag('alert').setText("Login to write a comment"))
+							($[18] || _1('div',$,18,11).flag('alert').setContent(
+								$[19] || _1('a',$,19,18).setHref('#').on$(0,['click','prevent','signIn'],self).setText("Login to write a comment")
+							,2)).end((
+								$[19].end()
+							,true))
 						),
 						
 						(self._post.counter.comments == 0) ? (
-							($[18] || _1('div',$,18,12).flag('warning').setText("There's nothing"))
+							($[20] || _1('div',$,20,11).flag('warning').setText("There's nothing"))
 						) : (
 							(self._comments.length == 0) ? (
-								($[19] || _1('div',$,19,12).flag('info').setText("Loading"))
+								($[21] || _1('div',$,21,11).flag('info').setText("Loading"))
 							) : (
-								($[20] || _1('div',$,20,12).flag('comments-list')).setContent(
+								($[22] || _1('div',$,22,11).flag('comments-list')).setContent(
 									(function tagLoop($0) {
 										var t0;
-										for (let i = 0, items = iter$(self.comments()), len = $0.taglen = items.length, comment; i < len; i++) {
+										for (let i = 0, items = iter$(self._comments), len = $0.taglen = items.length, comment; i < len; i++) {
 											comment = items[i];
 											(t0 = $0[i] || (t0=_1('div',$0,i)).flag('comment-card')).setContent([
-												(t0.$.A || _1('div',t0.$,'A',t0).flag('user').setContent([
-													_1('img',t0.$,'B','A').flag('avatar'),
-													_1('span',t0.$,'C','A').flag('name')
+												(t0.$.A || _1('div',t0.$,'A',t0).flag('detail').setContent([
+													_1('div',t0.$,'B','A').flag('avatar').setContent(
+														t0.$.C || _1('img',t0.$,'C','B')
+													,2),
+													_1('div',t0.$,'D','A').flag('content')
 												],2)).end((
-													t0.$.B.setSrc(comment.user.photoUrl).end(),
-													t0.$.C.setContent(comment.user.name,3)
+													t0.$.C.setSrc(comment.user.photoUrl).end(),
+													t0.$.D.setContent(
+														comment.content
+													,3)
 												,true)),
-												(t0.$.D || _1('div',t0.$,'D',t0).flag('content')).setContent(
-													comment.content
-												,3),
 												(comment.user.email == self.data().session.user.email) ? (
 													(t0.$.E || _1('div',t0.$,'E',t0).flag('action').setContent([
-														_1('button',t0.$,'F','E').setText("Edit"),
-														_1('button',t0.$,'G','E').setText("Delete")
+														_1('button',t0.$,'F','E').flag('edit').setText("Edit"),
+														_1('button',t0.$,'G','E').flag('remove').setText("Delete")
 													],2)).end((
 														t0.$.F.on$(0,['click','prevent',['editComment',comment.key]],self),
 														t0.$.G.on$(0,['click','prevent',['removeComment',comment.key]],self)
@@ -72900,7 +72980,7 @@ var Detail = Imba.defineTag('Detail', function(tag){
 												) : void(0)
 											],1);
 										};return $0;
-									})($[21] || _2($,21,$[20]))
+									})($[23] || _2($,23,$[22]))
 								,4)
 							)
 						)

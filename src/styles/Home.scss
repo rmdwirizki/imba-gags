@@ -1,0 +1,64 @@
+.Home {
+  display: flex;
+  justify-content: center;
+  
+  padding: 30px 0;
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .post-card {
+      margin-top : 30px;
+      
+      &:not(:first-child) {
+        padding-top: 30px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+      }
+
+      .title {
+        margin-bottom: 20px;
+
+        font-size: 20px;
+        font-weight: 700;
+        color: $app-primary-color;
+
+        cursor: pointer;
+
+        &:hover {
+          color: #09f;
+        }
+      }
+      .image {
+        width: 500px;
+        overflow: hidden;
+        
+        // max-height: 500px;
+        // text-align: center;
+
+        cursor: pointer;
+
+        img {
+          min-width: 400px;
+          max-width: 500px;
+        }
+      }
+      .label {
+        color: #A0AAB2;
+        margin-top: 20px;
+        font-size: .95em;
+
+        span {
+          margin-right: 10px;
+
+          cursor: pointer;
+
+          &:hover {
+            color: #7a8186;
+          }
+        }
+      }
+    }
+  }
+}

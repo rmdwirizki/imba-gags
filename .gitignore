@@ -1,2 +1,5 @@
 /node_modules
 /src/core/Config.imba
+
+/functions/node_modules
+firebase-debug.log

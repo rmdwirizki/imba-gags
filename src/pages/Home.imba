@@ -1,6 +1,19 @@
 import {db} from '../core/Config.imba'
 
 export tag Home
+  prop onscroll
+  prop lastScroll default: 0
+
+  def load 
+    @onscroll = do @lastScroll = window:scrollY
+
+  def mount
+    window.addEventListener 'scroll', @onscroll
+    window.scroll 0, @lastScroll
+
+  def unmount
+    window.removeEventListener 'scroll', @onscroll
+
   def setup
     const postsRef = db().ref('posts')
 
@@ -36,10 +49,10 @@ export tag Home
       else
         <div.posts-list>
           for post in data:posts
-            <div.post-card route-to=('/detail/' + post:slug)>
-              <div.title> post:title
-              <div.image>
+            <div.post-card>
+              <div.title route-to=('/detail/' + post:slug)> post:title
+              <div.image route-to=('/detail/' + post:slug)>
                 <img src=post:src>
               <div.label>
-                <span> "{post:counter:funs} Fun"
-                <span> "{post:counter:comments} Comments"
+                # <span> "{post:counter:funs} Fun"
+                <span route-to=('/detail/' + post:slug)> "{post:counter:comments} Comments"

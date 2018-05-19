@@ -9,9 +9,6 @@ export tag Navbar
           router:go '/'
     }
 
-  def signIn
-    login 
-
   def signInRedirect
     login {
       success: do 
@@ -20,10 +17,20 @@ export tag Navbar
 
   def render
     <self>
-      <a route-to='/'> 'Home'
-      if data:session:loggedIn
-        <a route-to='/create'> 'Add Post'
-        <a href='#' :click.prevent.signOut> 'Logout'
-      else
-        <a href='#' :click.prevent.signInRedirect> 'Add Post'
-        <a href='#' :click.prevent.signIn> 'Login'
+      <div.promote>
+        <a href='https://github.com/rmdwirizki/imba-gags' target='_blank'>
+          'Source on Github'
+      <div.logo>
+        <a route-to='/'> 'Imba Gags'
+      <div.action>
+        if data:session:loggedIn
+          <div.create>
+            <a route-to='/create'> 'Add Post'
+          <div.user>
+            <div.avatar>
+              <img src=data:session:user:photoUrl>
+            <div.dropdown>
+              <a href='#' :click.prevent.signOut> 'Logout'
+        else
+          <div.create>
+            <a href='#' :click.prevent.signInRedirect> 'Add Post'

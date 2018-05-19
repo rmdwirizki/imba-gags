@@ -1,62 +1,90 @@
 import {db} from '../core/Config.imba'
+import {login} from '../core/Auth.imba'
 
 export tag Detail
   prop post
   prop comments default: []
 
   prop content
+
+  prop postRef default: null
   prop postCommentsRef default: null
 
   def mount
-    updateLocalPost
-    clearContent
+    self.updateLocalPost
+    self.clearContent
+
+    window.scroll 0, 0
 
   def unmount
     if @postCommentsRef
       @postCommentsRef.off()
+    if @postRef
+      @postRef.off()
 
   def clearContent
     @content = ''
-    Imba.commit
 
   def updateLocalPost
+    # Update local post from store
     if data:posts:length > 0
-      # Update from store
       @post = data:posts:find do |item|
         return item:slug == params:slug
-
-      setupCommentListener
-    else
-      # Update from firebase
+    
+    # If store empty
+    # Update local post from firebase
+    if !@post
       const ref = db().ref('posts')
       const query = ref.orderByChild('slug').equalTo(params:slug)
       query.once 'value', do |snap| 
         for key, post of snap.val()
-          post:key = key
-          @post = post
-          if !@postCommentsRef
-            setupCommentListener
+          @post = Object.assign post, {}, {'key': key}
+          self.setupListener
+        
           Imba.commit
-
+    else 
+      self.setupListener
+    
     Imba.commit
 
-  def setupCommentListener
-    @comments = []
+  def setupListener
+    # Listen to all comment change on this post
 
+    @comments = []
     @postCommentsRef = db().ref('postComments/' + @post:key)
+
     @postCommentsRef.on 'child_added', do |snapshot|
-      const comment = snapshot.val()
-      comment:key = snapshot:key
+      const comment = Object.assign snapshot.val(), {}, {'key': snapshot:key}
       @comments:push comment
 
       Imba.commit
 
+    @postCommentsRef.on 'child_changed', do |snapshot|
+      const comment = Object.assign snapshot.val(), {}, {'key': snapshot:key}
+      const index = @comments:findIndex do |item|
+        return snapshot:key == item:key
+      @comments[index] = comment
+
+      Imba.commit
+
     @postCommentsRef.on 'child_removed', do |snapshot|
-      const key = snapshot:key
       @comments = @comments:filter do |item|
-        return item:key !== key
+        return item:key !== snapshot:key
       
       Imba.commit
+    
+    # Listen to post change
+    
+    @postRef = db().ref('posts/' + @post:key)
+    @postRef.on 'value', do |snapshot|
+      @post = Object.assign snapshot.val(), {}, {'key': snapshot:key}
+
+      Imba.commit
+
+  def signIn
+    login {
+      success: do # console.log 'berhasil'
+    }
 
   def addComment
     const newComment = {
@@ -68,13 +96,10 @@ export tag Detail
     let newCommentRef = @postCommentsRef.push()
     newCommentRef.set newComment, do |err|
       if !err
+        # Handled on firebase cloud function trigger
         # Increase comment counter on post
-        const postRef = db().ref('posts/' + @post:key + '/counter/comments')
-        postRef.set @post:counter:comments + 1
-        # Local change
-        post:counter:comments++
 
-    clearContent
+    self.clearContent
 
   def editComment key
     const oldCommentIndex = @comments:findIndex do |item|
@@ -99,24 +124,17 @@ export tag Detail
       let removedCommentRef = @postCommentsRef.child(key)
       removedCommentRef.remove do |err|
         if !err
+          # Handled on firebase cloud function trigger
           # Decrease comment counter on post
-          const postRef = db().ref('posts/' + @post:key + '/counter/comments')
-          postRef.set @post:counter:comments - 1
-          # Local change
-          post:counter:comments--
-  
+          
   def removePost key
     let confirm = window:confirm 'Are you sure?'
     if confirm == true
       let removedPostRef = db().ref('posts/' + @post:key)
       removedPostRef.remove do |err|
         if !err
-          # Remove comment from post in firebase
-          let removedCommentsRef = @postCommentsRef
-          removedCommentsRef.remove do |err|
-            if !err
-              # console.log 'All related comments has been deleted'
-
+          # Handled on firebase cloud function trigger
+          # Remove all comments from post in firebase
           router:go '/'
 
   def render
@@ -130,21 +148,24 @@ export tag Detail
           <div.image>
             <img src=post:src>
           <div.label>
-            <span> "{post:counter:funs} Fun"
+            # <span> "{post:counter:funs} Fun"
             <span> "{post:counter:comments} Comments"
           if post:author:email == data:session:user:email
             <div.action>
-              <button route-to=('/edit/' + post:slug)> "Edit"
-              <button :click.prevent.removePost(post:key)> "Delete"
+              <button.edit route-to=('/edit/' + post:slug)> "Edit"
+              <button.remove :click.prevent.removePost(post:key)> "Delete"
 
         <div.comment-box>
           if data:session:loggedIn
-            <div.input>
-              <form :submit.prevent.addComment>
+            <form :submit.prevent.addComment>
+              <div.avatar>
+                <img src=data:session:user:photoUrl>
+              <div.input>
                 <textarea[content] required>
                 <button type='submit'> "Submit"
           else
-            <div.alert> "Login to write a comment"
+            <div.alert> 
+              <a href='#' :click.prevent.signIn> "Login to write a comment"
 
           if @post:counter:comments == 0
             <div.warning> "There's nothing"
@@ -153,14 +174,14 @@ export tag Detail
               <div.info> "Loading"
             else
               <div.comments-list>
-                for comment in comments
+                for comment in @comments
                   <div.comment-card>
-                    <div.user> 
-                      <img.avatar src=comment:user:photoUrl>
-                      <span.name> comment:user:name
-                    <div.content>
-                      comment:content
+                    <div.detail>
+                      <div.avatar> 
+                        <img src=comment:user:photoUrl>
+                      <div.content>
+                        comment:content
                     if comment:user:email == data:session:user:email
                       <div.action>
-                        <button :click.prevent.editComment(comment:key)> "Edit"
-                        <button :click.prevent.removeComment(comment:key)> "Delete"
+                        <button.edit :click.prevent.editComment(comment:key)> "Edit"
+                        <button.remove :click.prevent.removeComment(comment:key)> "Delete"

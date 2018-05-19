@@ -1,0 +1,55 @@
+.Form {
+  display: flex;
+  justify-content: center;
+  
+  padding: 50px 0;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      padding: 10px;
+    }
+
+    input {
+      border: 1px solid rgba(1,1,1,0.2);
+      border-radius: 2px;
+      outline: none;
+
+      &::placeholder {
+        color: rgba(1,1,1,0.3);
+      }
+      &:focus {
+        border-color: rgba(1,1,1,0.5);
+      }
+    }
+    .preview {
+      max-width: 400px;
+
+      img {
+        width: 100%;
+      }
+    }
+    button {
+      background: $app-info-color;
+      color: #fff;
+      font-family: 'Rubik';
+      outline: none;
+      border: 0;
+      border-radius: 3px;
+
+      &:hover {
+        background: darken($app-info-color, 5);
+      }
+      &.update {
+        background: $app-warning-color;
+        &:hover {
+          background: darken($app-warning-color, 5);
+        }
+      }
+    }
+  }
+}

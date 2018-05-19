@@ -1,0 +1,201 @@
+.Detail {
+  display: flex;
+  justify-content: center;
+  
+  padding: 30px 0;
+
+  .post-card {
+    margin-top : 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    
+    animation-duration: .5s;
+    animation-name: fade;
+    
+    .title {
+      margin-bottom: 20px;
+
+      font-size: 20px;
+      font-weight: 700;
+      color: $app-primary-color;
+    }
+    .image {
+      width: 500px;
+      overflow: hidden;
+
+      img {
+        min-width: 400px;
+        max-width: 500px;
+      }
+    }
+    .label {
+      color: #A0AAB2;
+      margin-top: 20px;
+      font-size: .95em;
+
+      span {
+        margin-right: 10px;
+
+        cursor: pointer;
+
+        &:hover {
+          color: #7a8186;
+        }
+      }
+    }
+    .action {
+      text-align: right;
+
+      button {
+        color: #fff;
+        font-family: 'Rubik';
+        padding: 5px 10px;
+        outline: none;
+        border: 0;
+        border-radius: 3px;
+        margin-top: 20px;
+
+        cursor: pointer;
+
+        &.edit {
+          margin-right: 5px;
+          background: $app-warning-color;
+
+          &:hover {
+            background: darken($color: $app-warning-color, $amount: 5)
+          }
+        }
+        &.remove {
+          background: $app-danger-color;
+
+          &:hover {
+            background: darken($color: $app-danger-color, $amount: 5)
+          }
+        }
+      }
+    }
+  }
+  .comment-box {
+    padding-top: 30px;
+
+    .alert {
+      padding-bottom: 40px;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: $app-info-color;
+
+        &:hover {
+          color: darken($color: $app-info-color, $amount: 5);
+        }
+      }
+    }
+    form {
+      display: flex;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .input {
+        flex-grow: 1;
+        padding-left: 10px;
+
+        textarea {
+          width: 100%;
+          height: 40px;
+          outline: none;
+          resize: none;
+          border-radius: 1px;
+          border: 1px solid rgba(1,1,1,0.2);
+          padding: 5px;
+        }
+        button {
+          float: right;
+          
+          background: $app-info-color;
+          color: #fff;
+          font-family: 'Rubik';
+          padding: 5px 10px;
+          outline: none;
+          border: 0;
+          border-radius: 3px;
+          margin-top: 10px;
+
+          &:hover {
+            background: darken($app-info-color, 5);
+          }
+        }
+      }
+    }
+
+    .comment-card {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+
+      .detail {
+        display: flex;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+  
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .content {
+          padding-left: 10px;
+          flex-grow: 1;
+          font-size: .9em;
+        }
+      }
+      .action {
+        margin-top: 10px;
+
+        button {
+          color: #fff;
+          font-family: 'Rubik';
+          padding: 5px 10px;
+          outline: none;
+          border: 0;
+          border-radius: 3px;
+  
+          cursor: pointer;
+  
+          &.edit {
+            margin-right: 5px;
+            background: $app-warning-color;
+  
+            &:hover {
+              background: darken($color: $app-warning-color, $amount: 5)
+            }
+          }
+          &.remove {
+            background: $app-danger-color;
+  
+            &:hover {
+              background: darken($color: $app-danger-color, $amount: 5)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

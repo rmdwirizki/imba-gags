@@ -1,10 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik);
+
 // Config
 
-// Import 
+$app-primary-font: 'Rubik', 'cursive';
+$app-primary-color: #524948;
+$app-secondary-color: #C7CEDB;
+
+$app-warning-color: #d28d1c;
+$app-danger-color: #ce3d3d;
+$app-info-color: #3a8ec5;
+
+@import "Navbar.scss";
+@import "Home.scss";
+@import "Detail.scss";
+@import "Form.scss";
 
 // App Shell
 
 body { 
+  font-family: $app-primary-font;
   margin: 0; 
   overflow-x: hidden;
 }

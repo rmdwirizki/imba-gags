@@ -1,0 +1,73 @@
+.Navbar {
+  background: $app-primary-color;
+  height: 70px;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  & > * {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: $app-secondary-color;
+    opacity: .75;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .logo {
+    a {
+      font-size: 1.5rem;
+    }
+  }
+
+  .action {
+    .user {
+      cursor: pointer;
+      
+      display: flex;
+      align-items: center;
+      height: 100%;
+
+      margin-left: 30px;
+
+      &:hover .dropdown {
+        display: block;
+      }
+      .avatar {
+        display: flex;
+        align-items: center;
+        
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        }
+      }
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        
+        width: 150px;
+        padding: 10px 30px;
+
+        background: #524948d9;
+        text-align: right;
+
+        border-bottom-left-radius: 5px;
+      }
+    }
+  }
+}

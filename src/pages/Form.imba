@@ -121,6 +121,10 @@ export tag Form
           <input[title] type="text" placeholder="Title" required>
           <input[url] :keydown.validateImage :paste.validateImage type="url" placeholder="Insert the URL" required>
           <div.preview>
-            <span> "Preview"
+            # <span> "Preview"
             <img src=imgSrc>
-          <button type="submit"> "Submit"
+          <button .update=isEdit type="submit"> 
+            if isEdit
+              "Update"
+            else 
+              "Submit"
