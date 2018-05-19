@@ -11,7 +11,7 @@ npm install
 
 ### Firebase Setting
 
-## Account
+#### Account
 
 - Create file `src/Config.imba` 
 - Copy the content from `src/Config.example.imba`
@@ -28,7 +28,7 @@ export var firebaseConf = {
 }
 ```
 
-## Cloud Functions Trigger
+#### Cloud Functions Trigger
 
 Get firebase-tools to depoy cloud functions via CLI.
 
