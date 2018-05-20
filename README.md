@@ -3,6 +3,10 @@
 Like 9gag but much simpler. Made with Imba, Sass and Firebase.
 It's made to practice a workflow of realtime applications.
 
+## Demo
+
+![screencast](screencast.gif)
+
 ## Installation
 
 ```
