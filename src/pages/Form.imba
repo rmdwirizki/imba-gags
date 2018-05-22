@@ -16,6 +16,16 @@ export tag Form
   prop isValid default: true
   prop isEdit default: false
 
+  def checkAuth post
+    let hasAccess = false
+    if data:session:loggedIn
+      if post:author:email == data:session:user:email
+        hasAccess = true
+    
+    if !hasAccess
+      window.alert "You don't have access to this post"
+      router.go '/'
+
   def mount
     if !params:slug
       clear
@@ -25,6 +35,8 @@ export tag Form
           if item:slug == params:slug
             @postKey = item:key
             return true
+
+        self.checkAuth post
 
         @title = post:title
         @url = post:src
@@ -36,6 +48,8 @@ export tag Form
         query.once 'value', do |snap| 
           for key, post of snap.val()
             @postKey = key
+
+            self.checkAuth post
 
             @title = post:title
             @url = post:src
