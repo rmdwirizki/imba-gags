@@ -87,5 +87,5 @@ npm run build
 - [ ] Responsive CSS
 
 - [ ] Pagination
-- [ ] Optimizing Assets
+- [x] Optimizing Assets
 - [x] Deploy demo applications -> See [https://labs.develoka.com/imba-gags/](https://labs.develoka.com/imba-gags/)

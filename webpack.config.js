@@ -1,3 +1,5 @@
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
 	module: {
 		rules: [
@@ -8,9 +10,22 @@ module.exports = {
 			{
 				test:/\.(s*)css$/,
 				use: [
-					"style-loader", // creates style nodes from JS strings
-					"css-loader", // translates CSS into CommonJS
-					"sass-loader" // compiles Sass to CSS
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].css'
+						}
+					},
+					{
+						loader: 'extract-loader'
+					},
+					{
+						loader: 'css-loader',
+						options: { minimize: true }
+					},
+					{
+						loader: 'sass-loader'
+					}
 				]
 			}
 		]
@@ -18,6 +33,11 @@ module.exports = {
 	resolve: {
 		extensions: [".imba",".js",".json"]
 	},
-	entry: "./src/client.imba",
-	output: {  path: __dirname + '/dist', filename: "client.js" }
+	entry: ["./src/client.imba", "./src/styles/appStyles.scss"],
+	output: {  path: __dirname + '/dist', filename: "client.js" },
+	plugins: [
+    new UglifyJsPlugin({
+			test: /\.js($|\?)/i
+		})
+  ]
 }

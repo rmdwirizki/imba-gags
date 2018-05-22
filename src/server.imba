@@ -8,6 +8,7 @@ server.get(/.*/) do |req,res|
 		<head>
 			<title> "Imba Gags"
 			<meta charset="utf-8">
+			<link rel="stylesheet" href="/appStyles.css">
 		<body>
 			<script src="/client.js">
 	
