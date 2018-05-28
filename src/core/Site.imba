@@ -15,7 +15,7 @@ import {setAuthListener} from './Auth.imba'
 setAuthListener state:session
 
 # Router
-import 'imba-router'
+import {Router} from 'imba-router'
 
 import {Navbar} from '../components/Navbar.imba'
 
@@ -24,6 +24,9 @@ import {Form} from '../pages/Form.imba'
 import {Detail} from '../pages/Detail.imba'
 
 export tag Site
+  def build
+    setRouter Router.new {mode: 'hash'}
+
   def render
     <self>
       <Navbar[state]>
