@@ -63,18 +63,13 @@ npm run dev
 
 ## Build
 
-Don't forget to install imba CLI first
-
-```
-npm install -g imba
-imba src/server.imba
-```
-
 To run a build version while in development, open another terminal and run
 
 ```
 npm run build
 ```
+
+Open `index.html`
 
 ## Todo
 
